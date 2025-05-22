@@ -20,7 +20,6 @@ void loop() {
     myservo.write(0);
     delay(500);
   }
-  delay(500);
   // 7拍子
   for(int count = 0; count <= 3; count++) {                        
     myservo.write(0);
@@ -28,7 +27,7 @@ void loop() {
     myservo.write(90);
     delay(500);
   }
-  delay(2000);
+  delay(1000);
   // 運動後マッサージ
   for(int angle = 180; angle >= 0; angle--) {                 
     myservo.write(angle);  
