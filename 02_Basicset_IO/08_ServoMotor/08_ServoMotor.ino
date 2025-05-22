@@ -9,12 +9,27 @@ void setup() {
 }
 
 void loop() {
-  // 0-180 right
-  for(int angle = 0; angle <= 180; angle++) {                        
-    myservo.write(angle);
-    delay(15);
+  //3拍子*2
+  for(int count = 0; count <= 1; count++){
+    myservo.write(0);
+    delay(500); 
+    myservo.write(90);
+    delay(500);
+    myservo.write(180);
+    delay(500);
+    myservo.write(0);
+    delay(500);
   }
-  // 180-0  left 
+  delay(500);
+  // 7拍子
+  for(int count = 0; count <= 3; count++) {                        
+    myservo.write(0);
+    delay(500);
+    myservo.write(90);
+    delay(500);
+  }
+  delay(2000);
+  // 運動後マッサージ
   for(int angle = 180; angle >= 0; angle--) {                 
     myservo.write(angle);  
     delay(15);      
