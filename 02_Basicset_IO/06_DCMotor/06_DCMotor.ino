@@ -6,7 +6,7 @@ void setup() {
 
 void loop() {
   digitalWrite(motorPin, HIGH);
-  delay(1000);
-  digitalWrite(motorPin, LOW);
   delay(3000);
+  digitalWrite(motorPin, LOW);
+  delay(1000);
 }

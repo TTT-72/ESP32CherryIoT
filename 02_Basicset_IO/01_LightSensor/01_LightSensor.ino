@@ -12,7 +12,7 @@ void loop() {
 
   //Look at the serial monitor
   Serial.print(lux);
-  Serial.print(" Lux : ");
+  Serial.print(" ルクス : ");
   
   // Change the threshold to suit your environment
   if (lux > 20) { 

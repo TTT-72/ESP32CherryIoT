@@ -1,8 +1,8 @@
 const int ruptPin = 3; //3:ConnectorA 4:ConnectorB
 
 void setup(){
-  pinMode(ruptPin, INPUT);
   Serial.begin(115200);
+  pinMode(ruptPin, INPUT);
 }
 
 void loop(){
