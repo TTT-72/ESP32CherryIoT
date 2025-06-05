@@ -97,7 +97,7 @@ void loop() {                                        // メイン処理。セン
 
 void startMusic() {     //再生始動用関数:定義
   play = true;          //再生を続けるフラグをオン
-  stepTime = millis();　//millis関数。マイコンの累積起動時間を返す。
+  stepTime = millis();  //millis関数。マイコンの累積起動時間を返す。
   step = 0;             //再生を開始する音符の位置。停止時の再生再開位置を兼ねる。今回は最初からに固定
   
   ledcWriteTone(spkrPin, musicData[0].frequency); // 最初のステップを開始
@@ -116,7 +116,7 @@ void updateMusic() {                                        //実際の再生機
     step++;                                                 //次の音符へ遷移
     stepTime = currentTime;                                 //startMusicを挟まないので、次の stepTime を規定して次音符へ
     
-    if (step < musicDataLength) {　//現在の音符の演奏位置<音符の最大数
+    if (step < musicDataLength) {  //現在の音符の演奏位置<音符の最大数
       ledcWriteTone(spkrPin, musicData[step].frequency); //現在のステップ位置を演奏
     } else {
       stopMusic(); //音符が終わったので演奏終了
