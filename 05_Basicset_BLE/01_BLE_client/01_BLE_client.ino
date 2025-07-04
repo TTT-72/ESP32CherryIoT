@@ -17,7 +17,7 @@ void setup() {
   Serial.println("Starting BLE work!");
 
   // Initialize the BLE device
-  BLEDevice::init("My BLE Device");
+  BLEDevice::init("TTT BLE Device");
 
   // Create the BLE Server
   pServer = BLEDevice::createServer();
