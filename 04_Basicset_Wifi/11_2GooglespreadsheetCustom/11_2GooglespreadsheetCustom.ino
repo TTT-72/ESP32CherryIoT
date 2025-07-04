@@ -1,7 +1,9 @@
-//https://www.haruirosoleil.com/entry/2020/02/02/101937
-
+#include <DHT20.h> //DHT20 by RobTillaart
+#include <Wire.h>  //シリアル通信規格　本センサ基盤の搭載規格
 #include <WiFi.h>
 #include <WiFiClientSecure.h>
+
+DHT20 DHT; //インスタンス
 
 // WiFi Setting
 const char* ssid = "XXXX";
@@ -9,6 +11,7 @@ const char* password = "XXXX";
 
 void setup() {
   Serial.begin(115200);
+  Wire.begin(1, 3); //1,3:ConnectorA 5,4:ConnectorB　3はクロックシンクロ用、1は実データ信号用
 }
 
 void loop() {
@@ -37,6 +40,14 @@ void connectWiFi(){
 }
 
 void sendData(){
+  delay(1000);
+  DHT.read();
+  float Temperature;
+  float Humidity;
+  Temperature = DHT.getTemperature();
+  Humidity = DHT.getHumidity();
+  Serial.println(String(Temperature) + "℃");
+  Serial.println(String(Humidity) + "％");
 
   WiFiClientSecure sslclient;
 
@@ -44,26 +55,19 @@ void sendData(){
   String url = "https://script.google.com/macros/s/AKfycbyqhEOrbBPlz_4mSmmdTgpLLTptASFFbm23bw8ZMLFb9oJaiJjrqE8qhHbKRJyeFqsK/exec";  //googlescript web appのurlを入力
 
   //Prepare measurements
-  float sensor_data1= 11.11; //dammy data
-  float sensor_data2= 22.22; //dammy data
-  float sensor_data3= 33.33; //dammy data
+
 
   //Connect WiFi
   connectWiFi();
 
-  //Display of measured values
-  Serial.println(sensor_data1);
-  Serial.println(sensor_data2);
-  Serial.println(sensor_data3);
-
   //Add measurement value to the end of the URL
   url += "?";
   url += "&1_cell=";
-  url += sensor_data1;
+  url += Temperature;
+  url += "℃";
   url += "&2_cell=";
-  url += sensor_data2;
-  url += "&3_cell=";
-  url += sensor_data3;
+  url += Humidity;
+  url += "％";
 
   // Access server
   Serial.println("Access server...");
@@ -88,3 +92,4 @@ void sendData(){
   //Disconnect WiFi
   WiFi.mode(WIFI_OFF);
 }
+

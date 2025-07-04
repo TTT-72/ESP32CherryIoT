@@ -3,11 +3,11 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-const char* ssid = "xxxxx";
-const char* password =  "xxxxx";
+const char* ssid = "XXXX";
+const char* password =  "XXXX";
 
-const String endpoint = "http://api.openweathermap.org/data/2.5/weather?q=matsue,jp&APPID=";
-const String key = "xxxxxxxxxxxxxxxxx"; // Your API key
+const String endpoint = "http://api.openweathermap.org/data/2.5/weather?q=kofu,jp&APPID=";
+const String key = "XXX"; // Your API key
 
 void setup() {
   Serial.begin(115200);

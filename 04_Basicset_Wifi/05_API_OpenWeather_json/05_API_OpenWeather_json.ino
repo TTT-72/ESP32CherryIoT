@@ -4,11 +4,11 @@
 #include <HTTPClient.h>
 #include <ArduinoJson.h> //Arduino Json by Benoit Blanchon
 
-const char* ssid = "xxxxx";
-const char* password =  "xxxxx";
+const char* ssid = "XXXX";
+const char* password =  "XXXX";
 
 const String endpoint = "http://api.openweathermap.org/data/2.5/weather?q=kofu,jp&APPID=";
-const String key = "xxxxxxxxxxxxxxxxx"; // Your API key
+const String key = "XXXX"; // Your API key
 
 void setup() {
   Serial.begin(115200);
@@ -43,7 +43,7 @@ void loop() {
 
       //Other example
         /*
-        int wheatherId = forecaseDoc["weather"][0]["id"];
+        int wheatherId = forecaseDoc["weather"]["id"];
         String discription = forecaseDoc["weather"][0]["description"];
         float rain = forecaseDoc["rain"]["1h"];
         float snow = forecaseDoc["snow"]["1h"];

@@ -2,8 +2,8 @@
 #include <WiFiClientSecure.h>
 
 // WiFi Setting
-const char* ssid     = "xxxxxxx";
-const char* password = "xxxxxxx";
+const char* ssid     = "AP01-02";
+const char* password = "1qaz2wsx";
 
 const char *ntpServer1 = "pool.ntp.org";
 const char *ntpServer2 = "time.nist.gov";

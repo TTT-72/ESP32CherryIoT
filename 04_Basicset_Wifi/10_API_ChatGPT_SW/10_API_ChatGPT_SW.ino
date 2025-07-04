@@ -6,9 +6,9 @@
 
 const int swPin = 3; //3:ConnectorA 4:ConnectorB
 
-const char* ssid = "xxxxxxxxxxxx";
-const char* password = "xxxxxxxxxx";
-String openaiKey = "xxxxxxxxxxxxxxxxxxx"; //Your API Key
+const char* ssid = "foo";
+const char* password = "bar";
+String openaiKey = "XXXX"; //Your API Key
 
 //ChatGPT
 String role = "You are a helpful assistant.";
