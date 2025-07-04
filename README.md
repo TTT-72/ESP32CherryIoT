@@ -1,4 +1,4 @@
-# ESP32CherryIoT
+# ESP32CherryIoT for Education 
 
 CrowTail+ESP32 dongle
 
@@ -9,6 +9,9 @@ CrowTail+ESP32 dongle
   <img src="https://img.shields.io/badge/-WiFi-666666.svg?logo=RSS&style=plastic">
   <img src="https://img.shields.io/badge/-Bluetooth-666666.svg?logo=Bluetooth&style=plastic">
 </p>
+
+This repository was separated from the original fork and made standalone for educational purposes.
+https://github.com/DenkiJoshi/ESP32CherryIoT
 
 ## Settings
 
